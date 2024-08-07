@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>PDF Summarizer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+    <style>
+      body {
+        background: linear-gradient(to right, #6a11cb, #2575fc);;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .card {
+ 
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+      .btn-custom {
+        background-color: #0069d9;
+        color: white;
+      }
+      .btn-custom:hover {
+        background-color: #0056b3;
+      }
+      .form-control {
+        border-radius: 5px;
+      }
+      .summary {
+        margin-top: 30px;
+      }
+      .summary p {
+        background-color: #e9ecef;
+        padding: 15px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card">
+            <h1 class="text-center mb-4">PDF Summarizer</h1>
+            <form method="post" enctype="multipart/form-data">
+              <div class="mb-3">
+                <label for="file" class="form-label">Upload PDF</label>
+                <input type="file" class="form-control" id="file" name="file" required>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-custom btn-lg">Summarize</button>
+              </div>
+            </form>
+            {% if summary %}
+              <div class="summary mt-4">
+                <h2>Summary</h2>
+                <p>{{ summary }}</p>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
